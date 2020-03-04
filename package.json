@@ -12,8 +12,7 @@
     },
     "scripts": {
         "dev": "cross-env NODE_ENV= PORT=3001 DISABLE_LOGGING=true keystone dev",
-        "build": "cross-env NODE_ENV=production keystone build",
-        "start": "cross-env keystone dev"
+        "start": "keystone dev"
     },
     "dependencies": {
         "@keystonejs/adapter-mongoose": "^5.1.3",
