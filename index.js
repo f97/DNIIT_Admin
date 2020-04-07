@@ -147,6 +147,9 @@ keystone.createList('Page', {
     contentEn: {type: Wysiwyg},
     contentVi: {type: Wysiwyg},
     contentFr: {type: Wysiwyg},
+    excerptEn: {type: Text, isRequired: true, isMultiline: true},
+    excerptVi: {type: Text, isRequired: true, isMultiline: true},
+    excerptFr: {type: Text, isRequired: true, isMultiline: true},
   },
   plugins: [
     atTracking({}),
@@ -161,9 +164,9 @@ keystone.createList('Page', {
 
 keystone.createList('Menu', {
   fields: {
-    titleEn: {type: Text, isRequired: true, isMultiline: true},
-    titleVi: {type: Text, isRequired: true, isMultiline: true},
-    titleFr: {type: Text, isRequired: true, isMultiline: true},
+    menuEn: {type: Text, isRequired: true, isMultiline: true},
+    menuVi: {type: Text, isRequired: true, isMultiline: true},
+    menuFr: {type: Text, isRequired: true, isMultiline: true},
   },
   plugins: [
     atTracking({}),
