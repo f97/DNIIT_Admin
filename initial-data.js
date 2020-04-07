@@ -2,32 +2,32 @@ module.exports = async (keystone) => {
   // Count existing users
   const {
     data: {
-      _allUsersMeta: { count }
-    }
+      _allUsersMeta: {count},
+    },
   } = await keystone.executeQuery(
-    `query {
+      `query {
       _allUsersMeta {
         count
       }
-    }`
+    }`,
   );
 
   if (count === 0) {
     const password = 'QVUk3CNB4Yn!8a';
-    const email = 'admin@example.com';
+    const email = 'huynhduckhoan@gmail.com';
 
     await keystone.executeQuery(
-      `mutation initialUser($password: String, $email: String) {
+        `mutation initialUser($password: String, $email: String) {
             createUser(data: {name: "Admin", email: $email, isAdmin: true, password: $password}) {
               id
             }
           }`,
-      {
-        variables: {
-          password,
-          email
-        }
-      }
+        {
+          variables: {
+            password,
+            email,
+          },
+        },
     );
 
     console.log(`
