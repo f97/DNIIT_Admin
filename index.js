@@ -96,6 +96,9 @@ keystone.createList('Post', {
     contentEn: {type: Wysiwyg},
     contentVi: {type: Wysiwyg},
     contentFr: {type: Wysiwyg},
+    excerptEn: {type: Text, isRequired: true, isMultiline: true},
+    excerptVi: {type: Text, isRequired: true, isMultiline: true},
+    excerptFr: {type: Text, isRequired: true, isMultiline: true},
   },
   plugins: [
     atTracking({}),
@@ -147,9 +150,6 @@ keystone.createList('Page', {
     contentEn: {type: Wysiwyg},
     contentVi: {type: Wysiwyg},
     contentFr: {type: Wysiwyg},
-    excerptEn: {type: Text, isRequired: true, isMultiline: true},
-    excerptVi: {type: Text, isRequired: true, isMultiline: true},
-    excerptFr: {type: Text, isRequired: true, isMultiline: true},
   },
   plugins: [
     atTracking({}),
