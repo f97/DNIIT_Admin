@@ -4,18 +4,18 @@ const {PasswordAuthStrategy} = require('@keystonejs/auth-password');
 const {GraphQLApp} = require('@keystonejs/app-graphql');
 const {AdminUIApp} = require('@keystonejs/app-admin-ui');
 const {MongooseAdapter: Adapter} = require('@keystonejs/adapter-mongoose');
-const {Text, Checkbox, Select, Password, Relationship, File, Slug} = require('@keystonejs/fields');
+const {Text, Checkbox, Select, Password, Relationship, Slug} = require('@keystonejs/fields');
 const {Wysiwyg} = require('@keystonejs/fields-wysiwyg-tinymce');
-const {LocalFileAdapter} = require('@keystonejs/file-adapters');
+// const {LocalFileAdapter} = require('@keystonejs/file-adapters');
 const {atTracking} = require('@keystonejs/list-plugins');
 const initialiseData = require('./initial-data');
 
 require('dotenv').config();
 
-const fileAdapter = new LocalFileAdapter({
-  src: './files',
-  path: '/files',
-});
+// const fileAdapter = new LocalFileAdapter({
+//   src: './files',
+//   path: '/files',
+// });
 
 const PROJECT_NAME = 'DNIIT_Admin';
 
@@ -87,11 +87,7 @@ keystone.createList('Post', {
       many: true,
     },
     thumbnail: {
-      type: File,
-      adapter: fileAdapter,
-      hooks: {
-        beforeChange: ({existingItem = {}}) => fileAdapter.delete(existingItem),
-      },
+      type: Text,
     },
     contentEn: {type: Wysiwyg},
     contentVi: {type: Wysiwyg},
